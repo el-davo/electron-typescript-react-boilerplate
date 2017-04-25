@@ -7,7 +7,8 @@
     "test:watch": "npm test -- --watch --watch-extensions tsx,ts",
     "dev": "cross-env HOT=1 NODE_ENV=development electron -r ts-node/register ./server.ts",
     "lint": "tslint app/**/*.ts* ./*.ts",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "coverage": "nyc npm test"
   },
   "keywords": [],
   "author": "el-davo",
@@ -40,6 +41,7 @@
     "json-loader": "^0.5.4",
     "material-ui": "^0.17.4",
     "mocha": "^3.2.0",
+    "nyc": "^10.2.0",
     "react": "15.3.2",
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "15.4.2",
@@ -62,5 +64,28 @@
     "webpack-dev-server": "^2.4.4",
     "webpack-merge": "^4.1.0",
     "write-file-webpack-plugin": "^4.0.2"
+  },
+  "nyc": {
+    "include": [
+      "app/**/*.tsx",
+      "app/**/*.ts"
+    ],
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "app/**/*.spec.ts*"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "json",
+      "html",
+      "lcov"
+    ],
+    "all": true,
+    "report-dir": "./test_results/coverage"
   }
 }

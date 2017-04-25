@@ -1,5 +1,7 @@
 /node_modules
 /dist
+/test_results
+.nyc_output
 /.idea
 .awcache
 npm-debug.log
