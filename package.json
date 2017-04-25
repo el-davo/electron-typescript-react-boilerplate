@@ -6,6 +6,7 @@
     "test": "cross-env NODE_ENV=test mocha --compilers ts:ts-node/register --recursive --require should --require ./test-setup.ts app/**/*.spec.ts*",
     "test:watch": "npm test -- --watch --watch-extensions tsx,ts",
     "dev": "cross-env HOT=1 NODE_ENV=development electron -r ts-node/register ./server.ts",
+    "package": "cross-env NODE_ENV=production node -r ts-node/registerl package.js --asar=true",
     "lint": "tslint app/**/*.ts* ./*.ts",
     "lint:fix": "npm run lint -- --fix",
     "coverage": "nyc npm test"
