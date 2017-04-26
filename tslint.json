@@ -3,6 +3,7 @@
     "tslint:latest"
   ],
   "rules": {
+    "object-literal-sort-keys": false,
     "callable-types": true,
     "interface-name": false,
     "interface-over-type-literal": true,

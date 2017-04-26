@@ -21,6 +21,7 @@ export class TodoListComponent extends React.Component<Props, any> {
           this.props.todo.todoList.map((todo, key) => {
             return (
               <ListItem key={key}
+                        className="todo-item"
                         primaryText={todo.name}
                         secondaryText={todo.description}
                         leftAvatar={<Avatar icon={<TodoItemIcon />} />}

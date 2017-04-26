@@ -1,7 +1,8 @@
 import * as webpack from 'webpack';
 import * as DevServer from 'webpack-dev-server';
-import {config} from './webpack.dev';
+import {error, info} from 'winston';
 import './app/main';
+import {config} from './webpack.dev';
 
 new DevServer(webpack(config), {
   publicPath: config.output.publicPath,
@@ -15,6 +16,6 @@ new DevServer(webpack(config), {
     poll: true
   },
   inline: true
-}).listen(3000, 'localhost', err => {
-  err ? console.log(err) : console.log('Listening on port 3000');
+}).listen(3000, 'localhost', (err) => {
+  err ? error(err) : info('Listening on port 3000');
 });

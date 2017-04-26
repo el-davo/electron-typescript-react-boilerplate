@@ -1,9 +1,9 @@
-import {optimize, DefinePlugin} from 'webpack';
-import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
-import * as CleanWebpackPlugin from 'clean-webpack-plugin';
 import * as BabelPlugin from 'babel-webpack-plugin';
-import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as CleanWebpackPlugin from 'clean-webpack-plugin';
 import * as CopyWebpackPlugin from 'copy-webpack-plugin';
+import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import {DefinePlugin, optimize} from 'webpack';
 import * as merge from 'webpack-merge';
 import {baseConfig} from './webpack.base';
 
@@ -62,7 +62,7 @@ export default merge(baseConfig, {
     }),
     new ExtractTextPlugin({filename: 'style.css', allChunks: true}),
     new HtmlWebpackPlugin({template: 'index.ejs', excludeChunks: ['main']}),
-    new CopyWebpackPlugin([{from: './package.json', to: 'package.json'}])
+    new CopyWebpackPlugin([{from: './package.json'}, {from: 'app/img/**'}])
   ],
 
   target: 'electron-main'

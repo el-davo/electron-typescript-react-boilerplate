@@ -1,0 +1,31 @@
+os: Visual Studio 2015
+cache:
+  - node_modules
+branches:
+  only:
+    - master
+environment:
+  NSIS_ROOT: C:\Program Files (x86)\NSIS
+  matrix:
+    - nodejs_version: 6
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - set CI=true
+  - set PATH=%APPDATA%\npm;%PATH%;%NSIS_ROOT%
+  - npm install -g yarn electron-builder@2.1.1
+  - yarn
+matrix:
+  fast_finish: true
+build: off
+version: '{build}'
+shallow_clone: true
+clone_depth: 1
+artifacts:
+  - path: release\boilerplate Setup.exe
+    name: boilerplate.exe
+test_script:
+  - npm run lint
+  - npm run test
+  - npm run e2e
+  - npm run package
+  - npm run installer:win
