@@ -1,6 +1,6 @@
-import {HotModuleReplacementPlugin, NoEmitOnErrorsPlugin, DefinePlugin} from 'webpack';
-import {baseConfig} from './webpack.base';
+import {DefinePlugin, HotModuleReplacementPlugin, NoEmitOnErrorsPlugin} from 'webpack';
 import * as merge from 'webpack-merge';
+import {baseConfig} from './webpack.base';
 
 const port = process.env.PORT || 3000;
 
@@ -42,7 +42,7 @@ export const config = merge(baseConfig, {
     new NoEmitOnErrorsPlugin(),
     new DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('development')
-    }),
+    })
   ],
 
   target: 'electron-renderer'

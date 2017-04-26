@@ -1,9 +1,9 @@
-import {optimize, DefinePlugin} from 'webpack';
-import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
-import * as CleanWebpackPlugin from 'clean-webpack-plugin';
 import * as BabelPlugin from 'babel-webpack-plugin';
-import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as CleanWebpackPlugin from 'clean-webpack-plugin';
 import * as CopyWebpackPlugin from 'copy-webpack-plugin';
+import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import {DefinePlugin, optimize} from 'webpack';
 import * as merge from 'webpack-merge';
 import {baseConfig} from './webpack.base';
 

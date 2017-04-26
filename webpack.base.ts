@@ -1,5 +1,5 @@
-import {resolve, join} from 'path';
 import {CheckerPlugin} from 'awesome-typescript-loader';
+import {join, resolve} from 'path';
 
 export const baseConfig = {
   module: {
@@ -32,7 +32,7 @@ export const baseConfig = {
 
   resolve: {
     extensions: ['.js', '.jsx', '.ts', '.tsx', '.css'],
-    modules: ['app', 'node_modules', 'webpack', 'browser', 'web', 'browserify', 'main'],
+    modules: ['app', 'node_modules', 'webpack', 'browser', 'web', 'browserify', 'main']
   },
 
   plugins: [
