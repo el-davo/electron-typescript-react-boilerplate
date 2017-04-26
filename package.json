@@ -6,6 +6,8 @@
   "scripts": {
     "test": "cross-env NODE_ENV=test mocha --compilers ts:ts-node/register --recursive --require should --require ./test-setup.ts app/**/*.spec.ts*",
     "test:watch": "npm test -- --watch --watch-extensions tsx,ts",
+    "pree2e": "npm run dist",
+    "e2e": "mocha --compilers ts:ts-node/register --recursive --require should test/**/*.spec.ts* -t 100000",
     "dev": "cross-env HOT=1 NODE_ENV=development electron -r ts-node/register ./server.ts",
     "lint": "tslint app/**/*.ts* ./*.ts",
     "lint:fix": "npm run lint -- --fix",
@@ -68,6 +70,7 @@
     "redux-saga": "^0.14.8",
     "should": "^11.2.1",
     "sinon": "^2.1.0",
+    "spectron": "^3.6.2",
     "style-loader": "^0.16.1",
     "ts-node": "^3.0.2",
     "tslint": "^5.1.0",

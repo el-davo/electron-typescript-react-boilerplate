@@ -9,6 +9,6 @@ const todoList: TodoItem[] = [
 
 export function fetchTodoList(): Promise<TodoItem[]> {
   return new Promise((resolve) => {
-    setTimeout(() => resolve(todoList), 1000);
+    resolve(todoList);
   });
 }
