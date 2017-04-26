@@ -3,7 +3,7 @@
     "title": "boilerplate",
     "version": "0.0.1",
     "publisher": "el-davo",
-    "icon": "dist/app/img/favicon/ico",
+    "icon": "dist/app/img/favicon.ico",
     "verbosity": 1
   }
 }
