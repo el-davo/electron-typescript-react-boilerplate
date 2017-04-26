@@ -21,7 +21,7 @@ version: '{build}'
 shallow_clone: true
 clone_depth: 1
 artifacts:
-  - path: release\boilerplate.exe
+  - path: release\boilerplate Setup.exe
     name: boilerplate.exe
 test_script:
   - npm run lint
