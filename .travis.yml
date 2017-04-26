@@ -43,7 +43,7 @@ script:
 - npm run lint
 - npm run test
 - npm run e2e
-- npm run package:win
+- npm run package
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run installer:mac; fi
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then zip -r boilerplate-linux.zip ./release/linux-x64; fi
 
