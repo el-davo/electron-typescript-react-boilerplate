@@ -45,7 +45,7 @@ script:
 - npm run e2e
 - npm run package
 - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then npm run installer:mac; fi
-- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then zip -r boilerplate-linux.zip ./electron/linux-x64; fi
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then zip -r boilerplate-linux.zip ./electron/boilerplate-linux-x64; fi
 
 addons:
   artifacts:
