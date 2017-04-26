@@ -15,7 +15,7 @@
     "dist": "webpack --config webpack.prod.ts",
     "package": "npm run dist && electron-packager ./dist boilerplate --no-prune --out=electron",
     "package:all": "npm run dist && electron-packager ./dist boilerplate --no-prune --all --out=electron",
-    "installer:win": "electron-builder \"electron/win32-ia32/boilerplate-win32-ia32\" --platform=win --out=\"release\" --config=builder.json",
+    "installer:win": "electron-builder \"electron/boilerplate-win32-ia32\" --platform=win --out=\"release\" --config=builder.json",
     "installer:mac": "electron-installer-dmg \"electron/darwin-x64/boilerplate-darwin-x64\" boilerplate"
   },
   "keywords": [],
