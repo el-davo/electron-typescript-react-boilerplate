@@ -62,7 +62,7 @@ export default merge(baseConfig, {
     }),
     new ExtractTextPlugin({filename: 'style.css', allChunks: true}),
     new HtmlWebpackPlugin({template: 'index.ejs', excludeChunks: ['main']}),
-    new CopyWebpackPlugin([{from: './package.json', to: 'package.json'}])
+    new CopyWebpackPlugin([{from: './package.json'}, {from: 'app/img/**'}])
   ],
 
   target: 'electron-main'
