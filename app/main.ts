@@ -26,9 +26,9 @@ app.on('ready', () => {
     mainWindow = null;
   });
 
-  //if (process.env.NODE_ENV === 'development') {
-  mainWindow.openDevTools();
-  mainWindow.webContents.on('context-menu', (e, props) => {
+  if (process.env.NODE_ENV === 'development') {
+    mainWindow.openDevTools();
+    mainWindow.webContents.on('context-menu', (e, props) => {
       const {x, y} = props;
 
       Menu.buildFromTemplate([{
@@ -38,7 +38,7 @@ app.on('ready', () => {
         }
       }]).popup(mainWindow);
     });
-  //}
+  }
 
   if (process.platform === 'darwin') {
     template = [{

@@ -12,8 +12,8 @@ export default merge(baseConfig, {
   devtool: 'source-map',
 
   entry: {
-    main: './app/main',
-    bundle: ['babel-polyfill', 'index.tsx']
+    bundle: ['babel-polyfill', 'index.tsx'],
+    main: './app/main'
   },
 
   node: {
@@ -22,6 +22,7 @@ export default merge(baseConfig, {
   },
 
   output: {
+    filename: '[name].js',
     publicPath: './'
   },
 
@@ -42,13 +43,12 @@ export default merge(baseConfig, {
   },
 
   plugins: [
-    new optimize.CommonsChunkPlugin({name: 'main', filename: 'main.js'}),
     new optimize.OccurrenceOrderPlugin(true),
     new CleanWebpackPlugin(['dist', 'electron'], {}),
     new DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
-    /*new BabelPlugin({
+    new BabelPlugin({
       test: /\.js$/,
       presets: ['es2015', 'stage-0'],
       sourceMaps: false,
@@ -59,9 +59,9 @@ export default merge(baseConfig, {
         screw_ie8: true,
         warnings: false
       }
-    }),*/
+    }),
     new ExtractTextPlugin({filename: 'style.css', allChunks: true}),
-    new HtmlWebpackPlugin({excludeChunks: ['main']}),
+    new HtmlWebpackPlugin({template: 'index.ejs', excludeChunks: ['main']}),
     new CopyWebpackPlugin([{from: './package.json', to: 'package.json'}])
   ],
 
