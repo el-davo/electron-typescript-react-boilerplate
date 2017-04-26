@@ -2,10 +2,11 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es6",
+    "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": false,
     "sourceMap": true,
-    "baseUrl": "app",
+    "outFile": "./dist/bundle.js",
     "jsx": "react",
     "types": [
       "mocha",

@@ -1,5 +1,4 @@
-import {app, BrowserWindow, Menu, shell} from 'electron';
-import electron = require('electron');
+import {app, BrowserWindow, Menu} from 'electron';
 import * as contextMenu from 'electron-context-menu';
 
 let menu;
@@ -16,7 +15,7 @@ app.on('ready', () => {
     height: 728
   });
 
-  mainWindow.loadURL(`file://${__dirname}/app/app.html`);
+  mainWindow.loadURL(`file://${__dirname}/index.html`);
 
   mainWindow.webContents.on('did-finish-load', () => {
     mainWindow.show();
@@ -27,9 +26,9 @@ app.on('ready', () => {
     mainWindow = null;
   });
 
-  if (process.env.NODE_ENV === 'development') {
-    mainWindow.openDevTools();
-    mainWindow.webContents.on('context-menu', (e, props) => {
+  //if (process.env.NODE_ENV === 'development') {
+  mainWindow.openDevTools();
+  mainWindow.webContents.on('context-menu', (e, props) => {
       const {x, y} = props;
 
       Menu.buildFromTemplate([{
@@ -39,7 +38,7 @@ app.on('ready', () => {
         }
       }]).popup(mainWindow);
     });
-  }
+  //}
 
   if (process.platform === 'darwin') {
     template = [{
@@ -146,29 +145,6 @@ app.on('ready', () => {
         label: 'Bring All to Front',
         selector: 'arrangeInFront:'
       }]
-    }, {
-      label: 'Help',
-      submenu: [{
-        label: 'Learn More',
-        click() {
-          shell.openExternal('http://electron.atom.io');
-        }
-      }, {
-        label: 'Documentation',
-        click() {
-          shell.openExternal('https://github.com/atom/electron/tree/master/docs#readme');
-        }
-      }, {
-        label: 'Community Discussions',
-        click() {
-          shell.openExternal('https://discuss.atom.io/c/electron');
-        }
-      }, {
-        label: 'Search Issues',
-        click() {
-          shell.openExternal('https://github.com/atom/electron/issues');
-        }
-      }]
     }];
 
     menu = Menu.buildFromTemplate(template);
@@ -213,29 +189,6 @@ app.on('ready', () => {
             mainWindow.setFullScreen(!mainWindow.isFullScreen());
           }
         }]
-    }, {
-      label: 'Help',
-      submenu: [{
-        label: 'Learn More',
-        click() {
-          shell.openExternal('http://electron.atom.io');
-        }
-      }, {
-        label: 'Documentation',
-        click() {
-          shell.openExternal('https://github.com/atom/electron/tree/master/docs#readme');
-        }
-      }, {
-        label: 'Community Discussions',
-        click() {
-          shell.openExternal('https://discuss.atom.io/c/electron');
-        }
-      }, {
-        label: 'Search Issues',
-        click() {
-          shell.openExternal('https://github.com/atom/electron/issues');
-        }
-      }]
     }];
 
     if (process.env.NODE_ENV === 'development') {

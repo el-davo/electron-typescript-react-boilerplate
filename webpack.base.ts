@@ -1,7 +1,6 @@
 import {resolve, join} from 'path';
 import {CheckerPlugin} from 'awesome-typescript-loader';
 
-
 export const baseConfig = {
   module: {
     rules: [
