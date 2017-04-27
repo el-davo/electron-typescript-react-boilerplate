@@ -6,3 +6,4 @@
 /.idea
 .awcache
 npm-debug.log
+.runifchanged.checksum
