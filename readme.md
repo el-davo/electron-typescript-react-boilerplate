@@ -24,7 +24,7 @@ This is an electron boilerplate project using the below libraries
 You can clone this repo for your own project using the command below
 
 ```
-git clone https://github.com/el-davo/webpack-react-typescript-boilerplate.git your-project-name
+git clone https://github.com/el-davo/electron-typescript-react-boilerplate.git your-project-name
 ```
 
 ## Installation
