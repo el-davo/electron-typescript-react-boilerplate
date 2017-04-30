@@ -16,7 +16,7 @@
     "package": "npm run dist && electron-packager ./dist boilerplate --no-prune --out=electron",
     "package:all": "npm run dist && electron-packager ./dist boilerplate --no-prune --all --out=electron",
     "installer:win": "electron-builder \"electron/boilerplate-win32-ia32\" --platform=win --out=\"release\" --config=builder.json",
-    "installer:mac": "electron-installer-dmg \"electron/darwin-x64/boilerplate-darwin-x64\" boilerplate"
+    "installer:mac": "electron-installer-dmg \"electron/boilerplate-darwin-x64\" boilerplate"
   },
   "keywords": [],
   "author": "el-davo",
