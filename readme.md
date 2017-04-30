@@ -1,5 +1,9 @@
 # electron-typescript-react-boilerplate
 
+[![Build Status](https://travis-ci.org/el-davo/electron-typescript-react-boilerplate.svg?branch=master)](https://travis-ci.org/el-davo/electron-typescript-react-boilerplate)
+[![Build Status](https://ci.appveyor.com/api/projects/status/ql2r93kj81imv63a/branch/master?svg=true
+)](https://ci.appveyor.com/project/el-davo/electron-typescript-react-boilerplate/branch/master)
+
 ### What is this?
 
 This is an electron boilerplate project using the below libraries
