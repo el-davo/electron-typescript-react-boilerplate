@@ -15,7 +15,6 @@ cache:
     - packages/electron-builder/node_modules
     - packages/electron-builder-util/node_modules
     - $HOME/.electron
-    - /tmp/jest-electron-builder-tests
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then curl -L https://dl.bintray.com/develar/bin/7za -o /tmp/7za; fi
@@ -34,7 +33,7 @@ install:
 
 before_script:
   - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then "sh -e /etc/init.d/xvfb start"; fi
   - sleep 3
 
 script:
