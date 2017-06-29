@@ -10,7 +10,7 @@ This is an electron boilerplate project using the below libraries
  
  * Electron
  * Spectron
- * Webpack 2
+ * Webpack 3
  * Webpack dev server (Hot reloading)
  * React
  * Typescript
