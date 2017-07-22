@@ -58,7 +58,7 @@ npm run test:watch
 To run the tslinter. The second command will attempt to fix any issues found
 
 ```
-npm run `lint
+npm run lint
 npm run lint:fix
 ```
 
